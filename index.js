@@ -119,7 +119,6 @@ var newSessionHandlers = {
     this.emit(':tell', this.t('STOP_MESSAGE'));
   },
   'SessionEndedRequest': function() {
-    console.log('session ended!');
     this.emit(":tell", this.t('STOP_MESSAGE'));
   }
 };
@@ -227,16 +226,21 @@ var dateHandler = Alexa.CreateStateHandler(states.READY_MODE, {
     let typeName = this.event.request.intent.slots.type.value;
     let street = this.attributes['street'];
     let city = this.attributes['city'];
+
     dateHelper.getNextDateForType(city, street, type)
       .then((date) => {
         let message = this.t('NEXT_DATE_OF_TYPE_MESSAGE') +
           typeName +
           this.t('IS_ON_MESSAGE') +
-          this.t(date.date.getDay()) +
+          date.date.getDate() +
           this.t('DATE_SEPERATOR') +
           this.t('MONTH_' + date.date.getMonth());
 
         this.emit(':tell', message)
+      })
+      .catch((e) => {
+        console.error(e);
+        this.emit(':tell', this.t('ERROR'));
       });
   },
   'NextDatesIntent': function() {
@@ -254,12 +258,16 @@ var dateHandler = Alexa.CreateStateHandler(states.READY_MODE, {
           message +=
             this.t(date.type) +
             this.t('IS_ON_MESSAGE') +
-            this.t(date.date.getDay()) +
+            date.date.getDate() +
             this.t('DATE_SEPERATOR') +
             this.t('MONTH_' + date.date.getMonth());
         });
 
         this.emit(':tell', message);
+      })
+      .catch((e) => {
+        console.error(e);
+        this.emit(':tell', this.t('ERROR'));
       });
   },
   'TomorrowIntent': function() {
@@ -285,6 +293,10 @@ var dateHandler = Alexa.CreateStateHandler(states.READY_MODE, {
 
           this.emit(':tell', message);
         }
+      })
+      .catch((e) => {
+        console.error(e);
+        this.emit(':tell', this.t('ERROR'));
       });
   },
   'Unhandled': function() {
