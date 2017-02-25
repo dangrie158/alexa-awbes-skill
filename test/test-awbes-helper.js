@@ -79,12 +79,26 @@ describe('AWB-ES Helper', function() {
       });
 
     it(
-      'should not return an empty list when filtering for a known waste type',
+      'should not return an non empty list when filtering for a known waste type',
       function(done) {
         testling.getDistrictDates('Leinfelden-Echterdingen',
             'Fuchsweg', 'B')
           .then((data) => {
-            assert.equal(data.length, 0);
+            assert.notEqual(data.length, 0);
+            done();
+          })
+          .catch((err) => done(err));
+      });
+  });
+  describe('#getNextDateForType', function() {
+    it(
+      'should not be empty for a type',
+      function(done) {
+        testling.getNextDateForType('Leinfelden-Echterdingen',
+            'Fuchsweg', 'B')
+          .then((data) => {
+            console.log(data)
+            assert.notEqual(data.length, 0);
             done();
           })
           .catch((err) => done(err));
