@@ -97,7 +97,6 @@ describe('AWB-ES Helper', function() {
         testling.getNextDateForType('Leinfelden-Echterdingen',
             'Fuchsweg', 'B')
           .then((data) => {
-            console.log(data)
             assert.notEqual(data.length, 0);
             done();
           })
