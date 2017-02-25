@@ -1,0 +1,24 @@
+SetCityIntent Ich wohne in {city}
+SetCityIntent Mein Wohnort ist {city}
+SetCityIntent {city}
+SetStreetIntent {street}
+SetStreetIntent Ich wohne in der {street}
+SetStreetIntent Ich wohne im {street}
+SetStreetIntent Ich wohne {street}
+SetStreetIntent Meine Straße ist {street}
+SetStreetIntent Meine Straße ist die {street}
+NextDateIntent Wann ist das nächste mal {type}
+NextDateIntent Wann wird {type} abgeholt
+NextDateIntent Wann wird {type} das nächste mal abgeholt
+NextDateIntent Wann ist wieder {type}
+NextDateIntent wann wieder {type} ist
+NextDateIntent wann wieder {type} abgeholt wird
+NextDatesIntent Wie sind die nächsten Abholtermine
+NextDatesIntent Wann ist wieder Müll
+NextDatesIntent wann wieder Müll ist
+NextDatesIntent wann wieder Müll abgeholt wird
+TomorrowIntent Ist morgen Müll
+TomorrowIntent Ist morgen eine Abholung
+TomorrowIntent Was wird morgen Abgeholt
+TomorrowIntent ob morgen Müll abgeholt wird
+TomorrowIntent ob morgen eine Abholung stattfindet

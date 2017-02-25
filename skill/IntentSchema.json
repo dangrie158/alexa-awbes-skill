@@ -1,0 +1,27 @@
+{
+  "intents": [{
+    "intent": "SetCityIntent",
+    "slots": [{
+      "name": "city",
+      "type": "LIST_OF_CITIES"
+    }]
+  }, {
+    "intent": "SetStreetIntent",
+    "slots": [{
+      "name": "street",
+      "type": "LIST_OF_STREETS"
+    }]
+  }, {
+    "intent": "NextDateIntent",
+    "slots": [{
+      "name": "type",
+      "type": "LIST_OF_TRASHTYPES"
+    }]
+  }, {
+    "intent": "NextDatesIntent",
+    "slots": []
+  }, {
+    "intent": "TomorrowIntent",
+    "slots": []
+  }]
+}
