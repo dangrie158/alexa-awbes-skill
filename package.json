@@ -4,7 +4,7 @@
   "description": "an alexa skill that can tell you the pickup dates of www.awb-es.de",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/dangrie158/alexa-awbes-skill/issues"
   },
-  "homepage": "https://github.com/dangrie158/alexa-awbes-skill#readme"
+  "homepage": "https://github.com/dangrie158/alexa-awbes-skill#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7",
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
 }
